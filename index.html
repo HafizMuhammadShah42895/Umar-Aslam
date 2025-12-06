@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assessment 3: Multimodal Text - Umar Aslam</title>
     <style>
-        /* --- GENERAL PAGE SETUP --- */
+        /* --- MOBILE-FIRST GENERAL SETUP --- */
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
             background-color: #ecf0f1;
             margin: 0;
-            padding: 40px;
-            /* Requirement: Calibri Font, Size 11, Line Spacing 1.5 */
+            padding: 1rem;
             font-family: 'Calibri', 'Gill Sans', 'Gill Sans MT', sans-serif;
-            font-size: 11pt;
+            font-size: clamp(10pt, 2.5vw, 11pt);
             line-height: 1.5;
             color: #2c3e50;
         }
@@ -20,17 +23,18 @@
         .poster-container {
             max-width: 950px; 
             margin: 0 auto;
+            width: 100%;
         }
 
         /* --- POSTER SHEET STYLING --- */
         .poster-sheet {
             background-color: white;
             width: 100%;
-            padding: 60px; 
+            padding: 1.5rem;
             margin-bottom: 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             box-sizing: border-box;
-            border-top: 15px solid #2c3e50;
+            border-top: 8px solid #2c3e50;
             position: relative;
             page-break-after: always;
         }
@@ -40,130 +44,225 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80%;
-            height: 3px;
+            width: 90%;
+            height: 2px;
             background: linear-gradient(to right, transparent, #bdc3c7 20%, #bdc3c7 80%, transparent);
         }
 
         /* --- HEADERS --- */
         .poster-title {
-            font-size: 26pt;
+            font-size: clamp(18pt, 5vw, 26pt);
             font-weight: 900;
             text-align: center;
             text-transform: uppercase;
             color: #2c3e50;
             border-bottom: 2px solid #bdc3c7;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+            word-wrap: break-word;
         }
 
         h2 {
             color: #c0392b; 
-            font-size: 16pt;
-            margin-top: 40px;
-            border-left: 5px solid #c0392b;
-            padding-left: 15px;
+            font-size: clamp(14pt, 3.5vw, 16pt);
+            margin-top: 2rem;
+            border-left: 4px solid #c0392b;
+            padding-left: 0.75rem;
             background-color: #fadbd8; 
-            padding-top: 5px;
-            padding-bottom: 5px;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-right: 0.5rem;
         }
 
         h3 {
             color: #16a085;
-            font-size: 13pt;
-            margin-top: 30px;
+            font-size: clamp(12pt, 3vw, 13pt);
+            margin-top: 1.5rem;
             font-weight: bold;
             text-decoration: underline;
             text-decoration-color: #a2d9ce;
         }
 
-        p { margin-bottom: 15px; text-align: justify; }
+        p { 
+            margin-bottom: 1rem; 
+            text-align: left;
+        }
 
         /* --- IMAGES & INFOGRAPHICS --- */
         .visual-container {
             text-align: center;
-            margin: 20px 0;
-            padding: 10px;
+            margin: 1rem 0;
+            padding: 0.75rem;
             border: 1px dashed #bdc3c7;
             background: #f9f9f9;
         }
         .poster-image {
             width: 100%;
+            max-width: 100%;
             height: auto;
             object-fit: contain;
             border-radius: 4px;
+            display: block;
         }
         .caption {
-            font-size: 9pt;
+            font-size: clamp(8pt, 2vw, 9pt);
             color: #7f8c8d;
             font-style: italic;
-            margin-top: 5px;
+            margin-top: 0.5rem;
         }
 
         /* --- TABLES --- */
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1rem 0;
+        }
         table {
             width: 100%;
+            min-width: 280px;
             border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 10pt;
+            margin: 1rem 0;
+            font-size: clamp(9pt, 2.2vw, 10pt);
             border: 1px solid #bdc3c7;
+            display: table;
         }
         th {
             background-color: #34495e;
             color: white;
-            padding: 10px;
+            padding: 0.75rem 0.5rem;
             text-align: left;
+            font-size: clamp(9pt, 2.2vw, 10pt);
         }
         td {
             border-bottom: 1px solid #ddd;
-            padding: 10px;
+            padding: 0.75rem 0.5rem;
             vertical-align: top;
+            word-wrap: break-word;
         }
         tr:nth-child(even) td { background-color: #f2f3f4; }
         .table-caption {
-            font-weight: bold; margin-top: 20px; color: #2c3e50;
+            font-weight: bold; 
+            margin-top: 1.5rem; 
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-size: clamp(10pt, 2.5vw, 11pt);
         }
 
         /* --- CHARTS (CSS Generated) --- */
         .chart-box {
             border: 2px solid #bdc3c7;
-            padding: 20px;
-            margin: 20px 0;
+            padding: 1rem;
+            margin: 1rem 0;
             background: #fff;
         }
         .chart-title {
             text-align: center;
             font-weight: bold;
-            margin-bottom: 15px;
-            font-size: 12pt;
+            margin-bottom: 1rem;
+            font-size: clamp(11pt, 2.8vw, 12pt);
             color: #2980b9;
         }
-        .bar-container { margin-bottom: 10px; }
-        .bar-label { font-size: 10pt; font-weight: bold; margin-bottom: 3px; display: block; }
-        .bar-track { background: #ecf0f1; height: 25px; width: 100%; border-radius: 5px; }
+        .bar-container { 
+            margin-bottom: 0.75rem; 
+        }
+        .bar-label { 
+            font-size: clamp(9pt, 2.2vw, 10pt); 
+            font-weight: bold; 
+            margin-bottom: 0.25rem; 
+            display: block;
+            word-wrap: break-word;
+        }
+        .bar-track { 
+            background: #ecf0f1; 
+            height: auto;
+            min-height: 25px;
+            width: 100%; 
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
         .bar-fill {
             height: 100%;
+            min-height: 25px;
             text-align: right;
-            padding-right: 10px;
+            padding: 0.25rem 0.5rem;
             color: white;
-            font-size: 9pt;
-            line-height: 25px;
+            font-size: clamp(8pt, 2vw, 9pt);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
             border-radius: 5px;
         }
 
         /* --- TITLE PAGE --- */
         .student-info { 
             text-align: center; 
-            margin-top: 100px; 
-            padding: 40px; 
+            margin-top: 2rem; 
+            padding: 1.5rem; 
             border: 3px double #2c3e50; 
+        }
+        
+        .student-info h1 {
+            font-size: clamp(24pt, 6vw, 36pt) !important;
+            margin-bottom: 0.5rem !important;
+        }
+        
+        .student-info h2 {
+            background: none !important;
+            border: none !important;
+            color: #7f8c8d !important;
+            font-size: clamp(14pt, 4vw, 18pt) !important;
+            margin-top: 0 !important;
+            padding: 0 !important;
         }
         
         /* --- REFERENCES SECTION --- */
         .ref-entry {
-            padding-left: 30px;
-            text-indent: -30px;
-            margin-bottom: 10px;
+            padding-left: 1.5rem;
+            text-indent: -1.5rem;
+            margin-bottom: 0.75rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* --- TABLET STYLES --- */
+        @media (min-width: 600px) {
+            body {
+                padding: 2rem;
+            }
+            .poster-sheet {
+                padding: 2.5rem;
+                border-top: 12px solid #2c3e50;
+            }
+            .student-info {
+                margin-top: 4rem;
+                padding: 2.5rem;
+            }
+            p {
+                text-align: justify;
+            }
+        }
+        
+        /* --- LAPTOP/DESKTOP STYLES --- */
+        @media (min-width: 900px) {
+            body {
+                padding: 2.5rem;
+            }
+            .poster-sheet {
+                padding: 3.75rem;
+                border-top: 15px solid #2c3e50;
+            }
+            .student-info {
+                margin-top: 6rem;
+                padding: 2.5rem;
+            }
+        }
+        
+        /* --- WIDE SCREEN STYLES --- */
+        @media (min-width: 1200px) {
+            .poster-sheet {
+                padding: 60px;
+            }
         }
 
         /* --- PRINT STYLES --- */
