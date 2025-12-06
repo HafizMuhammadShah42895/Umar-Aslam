@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment 3: Multimodal Text - Umar Aslam</title>
+    <style>
+        /* --- GENERAL PAGE SETUP --- */
+        body {
+            background-color: #ecf0f1;
+            margin: 0;
+            padding: 40px;
+            /* Requirement: Calibri Font, Size 11, Line Spacing 1.5 */
+            font-family: 'Calibri', 'Gill Sans', 'Gill Sans MT', sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #2c3e50;
+        }
+
+        .poster-container {
+            max-width: 950px; 
+            margin: 0 auto;
+        }
+
+        /* --- POSTER SHEET STYLING --- */
+        .poster-sheet {
+            background-color: white;
+            width: 100%;
+            padding: 60px; 
+            margin-bottom: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            border-top: 15px solid #2c3e50;
+            position: relative;
+            page-break-after: always;
+        }
+        .poster-sheet::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #bdc3c7 20%, #bdc3c7 80%, transparent);
+        }
+
+        /* --- HEADERS --- */
+        .poster-title {
+            font-size: 26pt;
+            font-weight: 900;
+            text-align: center;
+            text-transform: uppercase;
+            color: #2c3e50;
+            border-bottom: 2px solid #bdc3c7;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #c0392b; 
+            font-size: 16pt;
+            margin-top: 40px;
+            border-left: 5px solid #c0392b;
+            padding-left: 15px;
+            background-color: #fadbd8; 
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: #16a085;
+            font-size: 13pt;
+            margin-top: 30px;
+            font-weight: bold;
+            text-decoration: underline;
+            text-decoration-color: #a2d9ce;
+        }
+
+        p { margin-bottom: 15px; text-align: justify; }
+
+        /* --- IMAGES & INFOGRAPHICS --- */
+        .visual-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px dashed #bdc3c7;
+            background: #f9f9f9;
+        }
+        .poster-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+        .caption {
+            font-size: 9pt;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        /* --- TABLES --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10pt;
+            border: 1px solid #bdc3c7;
+        }
+        th {
+            background-color: #34495e;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        td {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            vertical-align: top;
+        }
+        tr:nth-child(even) td { background-color: #f2f3f4; }
+        .table-caption {
+            font-weight: bold; margin-top: 20px; color: #2c3e50;
+        }
+
+        /* --- CHARTS (CSS Generated) --- */
+        .chart-box {
+            border: 2px solid #bdc3c7;
+            padding: 20px;
+            margin: 20px 0;
+            background: #fff;
+        }
+        .chart-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 12pt;
+            color: #2980b9;
+        }
+        .bar-container { margin-bottom: 10px; }
+        .bar-label { font-size: 10pt; font-weight: bold; margin-bottom: 3px; display: block; }
+        .bar-track { background: #ecf0f1; height: 25px; width: 100%; border-radius: 5px; }
+        .bar-fill {
+            height: 100%;
+            text-align: right;
+            padding-right: 10px;
+            color: white;
+            font-size: 9pt;
+            line-height: 25px;
+            border-radius: 5px;
+        }
+
+        /* --- TITLE PAGE --- */
+        .student-info { 
+            text-align: center; 
+            margin-top: 100px; 
+            padding: 40px; 
+            border: 3px double #2c3e50; 
+        }
+        
+        /* --- REFERENCES SECTION --- */
+        .ref-entry {
+            padding-left: 30px;
+            text-indent: -30px;
+            margin-bottom: 10px;
+        }
+
+        /* --- PRINT STYLES --- */
+        @media print {
+            @page {
+                margin: 0;
+                size: A4;
+            }
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            body {
+                margin: 0 !important;
+                padding: 0 !important;
+                background: white;
+            }
+            .poster-container {
+                margin: 0 !important;
+                padding: 0 !important;
+                max-width: 100%;
+            }
+            .poster-sheet {
+                margin: 0 !important;
+                padding: 60px !important;
+                box-shadow: none !important;
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+            .poster-sheet::after {
+                display: none;
+            }
+            table, .chart-box, .visual-container {
+                page-break-inside: avoid;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="poster-container">
+
+    <div class="poster-sheet" style="border-top: 15px solid #2c3e50;">
+        <div class="student-info">
+            <h1 style="font-size: 36pt; margin-bottom: 10px;">ASSESSMENT 3</h1>
+            <h2 style="background:none; border:none; color:#7f8c8d; font-size: 18pt; margin-top:0;">Multimodal Text Series</h2>
+            <hr style="width: 50%; margin: 20px auto;">
+            <p><strong>Topic:</strong> Supporting, Facilitating, and Promoting Young Children's Health, Safety, Nutrition, Wellness, and Wellbeing</p>
+            <p><strong>Student Name:</strong> Umar Aslam</p>
+            <p><strong>Student ID:</strong> IKO3009528</p>
+            <p><strong>Subject:</strong> Early Childhood Education and Care in the Australian Context</p>
+        
+        </div>
+    </div>
+
+    <div class="poster-sheet" style="border-top: 15px solid #c0392b;">
+        <div class="poster-title">POSTER 1: SAFETY</div>
+
+        <p>Safety is the foundational requirement for all early childhood services. In the Australian context, this is governed by the <em>National Quality Standard (NQS)</em> Quality Area 2, which explicitly states that "Each child is protected." However, safety is not merely about the removal of all potential dangers. Modern pedagogical theory suggests that safety is about "Hazard Management" rather than "Risk Elimination." Educators must create an environment where children can explore, take calculated risks, and develop resilience, all under the guidance of attentive and professional supervision. This poster focuses on the critical areas of safe sleep, risk assessment, and active supervision practices that protect children from serious harm while enabling their development.</p>
+
+        <div class="visual-container">
+            <img src="safety-diagram.png" alt="3D Isometric Diagram of Safe Sleep Cot" class="poster-image">
+            <div class="caption">Figure 1. Compliant Safe Sleep environment (Visual generated via Gemini Nano Banana).</div>
+        </div>
+
+        <h2>1.1 SIDS and Safe Sleep Environments</h2>
+        <p>Sudden Infant Death Syndrome (SIDS) remains a critical safety concern in Early Childhood settings. The risk is highest for infants aged 0-12 months. Educators must adhere to <strong>Red Nose Australia</strong> guidelines to minimize this risk. The primary safety mechanism is the <strong>Supine Position</strong> (placing infants on their back). Research demonstrates that this keeps the airway clear and reduces the risk of suffocation.</p>
+        <p>Furthermore, the physical environment of the cot is strictly regulated. As shown in Figure 1, cots must be free of bumpers, pillows, doonas, and soft toys. These items, while aesthetically pleasing, pose a significant suffocation risk. Educators must perform physical breathing checks every 10-15 minutes, documenting the respiratory rate and skin color of the infant to ensure they are not in distress.</p>
+
+        <div class="table-caption">Table 1.1: Safe Sleep Compliance Checklist</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Requirement (Red Nose Australia)</th>
+                    <th>Educator Responsibility</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Bedding</strong></td>
+                    <td>Firm mattress, flat, no loose bedding.</td>
+                    <td>Inspect bedding daily. Ensure sheets are tight and secure.</td>
+                </tr>
+                <tr>
+                    <td><strong>Positioning</strong></td>
+                    <td>Feet at the bottom of the cot.</td>
+                    <td>Place infant on back. Do not use wedges or propping devices.</td>
+                </tr>
+                <tr>
+                    <td><strong>Monitoring</strong></td>
+                    <td>Physical check every 10-15 mins.</td>
+                    <td>Sign sleep log. Check chest rise/fall and skin color visibly.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>1.2 Risk Assessment vs Hazard Elimination</h2>
+        <p>Educators use a "Risk-Benefit Analysis" to distinguish between a hazard (dangerous) and a risk (educational). A <strong>Hazard</strong> is something that has no benefit to the child, such as a broken window, exposed chemicals, or a gate left unlatched. These must be eliminated immediately. A <strong>Risk</strong>, however, is a challenge that provides a developmental benefit, such as climbing a tree stump, using scissors, or balancing on a beam. These risks are managed through scaffolding and active supervision. Eliminating all risks stunts a child's gross motor development and ability to assess danger for themselves.</p>
+
+        <div class="table-caption">Table 1.2: Hazard vs Risk Matrix</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Classification</th>
+                    <th>Educator Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Broken Glass</strong></td>
+                    <td><strong>Hazard</strong></td>
+                    <td>Immediate removal. Isolate the area. No educational benefit.</td>
+                </tr>
+                <tr>
+                    <td><strong>Tree Climbing</strong></td>
+                    <td><strong>Risk</strong></td>
+                    <td>Manage the risk. Check branch stability. Stand close (active supervision). Benefit: Gross motor skills.</td>
+                </tr>
+                <tr>
+                    <td><strong>Hot Weather (35°C+)</strong></td>
+                    <td><strong>Hazard</strong></td>
+                    <td>Substitute: Move play indoors or to deep shade with hydration.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>1.3 Supervision Ratios and Injury Data</h2>
+        <p>Adequate supervision is the key to preventing injuries. Regulation 123 of the National Regulations sets out the minimum educator-to-child ratios. These ratios ensure that educators can effectively monitor children and respond immediately to emergencies. "Active Supervision" involves positioning oneself to see the maximum area, scanning the environment continuously, and listening for changes in volume or tone.</p>
+
+        <div class="chart-box">
+            <div class="chart-title">Chart 1.1: Educator-to-Child Ratios (VIC/NSW)</div>
+            <div class="bar-container">
+                <span class="bar-label">Birth to 24 Months</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 25%; background-color: #e74c3c;">1 : 4</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">24 Months to 36 Months</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 20%; background-color: #e67e22;">1 : 5</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">36 Months to Preschool</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 10%; background-color: #f1c40f; color:#333;">1 : 11</div></div>
+            </div>
+        </div>
+
+        <div class="chart-box">
+            <div class="chart-title">Chart 1.2: Common Locations of Injury in ECEC</div>
+            <div class="bar-container">
+                <span class="bar-label">Outdoor Climbing Equipment</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 45%; background-color: #c0392b;">45% (High Risk)</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Indoor Wet Areas</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 25%; background-color: #d35400;">25% (Slips/Falls)</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Transition Zones</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 15%; background-color: #f39c12; color:#333;">15% (Impact)</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="poster-sheet" style="border-top: 15px solid #27ae60;">
+        <div class="poster-title">POSTER 2: HEALTH</div>
+
+        <p>Health in early childhood is a dynamic state involving physical health, hygiene, and disease prevention. Due to the developing immune systems of young children and their close physical contact in group settings, childcare centres can easily become hubs for infectious diseases. Educators play a frontline role in breaking the chain of infection through specific protocols outlined in the National Health and Medical Research Council's (NHMRC) publication <em>Staying Healthy (5th Ed.)</em>. This includes managing hygiene, exclusions, and chronic conditions like asthma.</p>
+
+        <div class="visual-container">
+            <img src="handwashing.png" alt="Children washing hands" class="poster-image">
+            <div class="caption">Figure 2. Visual aids support hygiene autonomy (Generated via Gemini Nano Banana).</div>
+        </div>
+
+        <h2>2.1 Infection Control Protocols</h2>
+        <p>The most effective method for preventing the spread of illness is rigorous hand washing. Educators should use "gestural" teaching methods, such as singing the "Happy Birthday" song twice (20 seconds) to ensure children scrub for long enough to mechanically remove pathogens. Hand sanitizer is not a substitute for soap and water when hands are visibly soiled or when dealing with Norovirus (gastroenteritis). Effective infection control also requires strict policies regarding exclusion periods for sick children.</p>
+
+        <div class="table-caption">Table 2.1: Exclusion Periods (Staying Healthy 5th Ed.)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Condition</th>
+                    <th>Symptoms</th>
+                    <th>Exclusion Period (Staying Home)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Gastroenteritis</strong></td>
+                    <td>Vomiting, Diarrhea</td>
+                    <td><strong>48 hours</strong> after the last symptom has ceased.</td>
+                </tr>
+                <tr>
+                    <td><strong>Influenza (Flu)</strong></td>
+                    <td>Fever, Cough, Fatigue</td>
+                    <td>Until the child is well and fever-free for 24 hours.</td>
+                </tr>
+                <tr>
+                    <td><strong>Conjunctivitis</strong></td>
+                    <td>Red/sticky eyes</td>
+                    <td>Until discharge ceases or treatment has begun.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="table-caption">Table 2.2: Nappy Changing Hygiene Protocol</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Step</th>
+                    <th>Action</th>
+                    <th>Hygiene Rationale</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Prep</strong></td>
+                    <td>Wash hands, glove up.</td>
+                    <td>Prevents contaminating clean supplies.</td>
+                </tr>
+                <tr>
+                    <td><strong>2. Clean</strong></td>
+                    <td>Remove nappy. Wipe front-to-back.</td>
+                    <td>Prevents UTI (Urinary Tract Infections).</td>
+                </tr>
+                <tr>
+                    <td><strong>3. Discard</strong></td>
+                    <td>Peel gloves inside-out.</td>
+                    <td>Traps bacteria inside the glove.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>2.2 Immunization and Disease Management</h2>
+        <p>Tracking immunization is a legal requirement under "No Jab, No Play" laws in many Australian states. Educators must request updated Immunization History Statements at specific milestones (e.g., 6 months, 12 months, 4 years) to ensure "herd immunity" is maintained within the centre.</p>
+
+        <div class="chart-box">
+            <div class="chart-title">Chart 2.1: Immunization Schedule Milestones</div>
+            <div class="bar-container">
+                <span class="bar-label">Birth</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 10%; background-color: #27ae60;">Hepatitis B</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">2, 4, & 6 Months</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 40%; background-color: #2ecc71;">DTPa, Polio, Pneumococcal</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">12 Months</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 60%; background-color: #1abc9c;">Measles (MMR), Meningococcal</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">4 Years</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 90%; background-color: #16a085;">Boosters (DTPa, Polio)</div></div>
+            </div>
+        </div>
+
+        <div class="chart-box">
+            <div class="chart-title">Chart 2.2: Common Asthma Triggers in Care</div>
+            <div class="bar-container">
+                <span class="bar-label">Viral Infections (Colds)</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 80%; background-color: #3498db;">80% Prevalence</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Exercise/Activity</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 60%; background-color: #2980b9;">60% Prevalence</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Weather Changes (Cold Air)</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 40%; background-color: #1f618d;">40% Prevalence</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="poster-sheet" style="border-top: 15px solid #f39c12;">
+        <div class="poster-title">POSTER 3: NUTRITION</div>
+
+        <p>Nutrition in the early years sets the metabolic trajectory for life. Educators are responsible not just for providing food, but for fostering "Food Literacy"—teaching children where food comes from, how it affects their bodies, and how to make healthy choices. This aligns with <em>Get Up and Grow</em> guidelines. Effective nutrition education involves modelling healthy eating behaviours, creating positive social environments during mealtimes, and respecting cultural dietary requirements.</p>
+
+        <div class="visual-container">
+            <img src="nutrition-lunchbox.png" alt="Healthy Lunchbox Flatlay" class="poster-image">
+            <div class="caption">Figure 3. A balanced lunchbox meeting Australian Dietary Guidelines (Generated via Gemini Nano Banana).</div>
+        </div>
+
+        <h2>3.1 Dietary Guidelines and Menu Planning</h2>
+        <p>Services must provide 50% of a child’s Recommended Daily Intake (RDI) if the child is in care for 8 hours or more. As shown in Figure 3, a balanced diet includes the five food groups: Vegetables, Fruit, Grain (Cereal), Lean Meats/Poultry/Fish, and Dairy/Alternatives. Menu planning should be cyclical and seasonal, avoiding repetition and ensuring variety.</p>
+
+        <div class="table-caption">Table 3.1: Sample Daily Menu</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Meal</th>
+                    <th>Menu Item</th>
+                    <th>Nutritional Goal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Morning Tea</strong></td>
+                    <td>Sliced pear & cheddar cheese cubes</td>
+                    <td>Calcium & Fibre</td>
+                </tr>
+                <tr>
+                    <td><strong>Lunch</strong></td>
+                    <td>Wholemeal pasta with lean beef bolognese</td>
+                    <td>Iron (Heme) & Complex Carbs</td>
+                </tr>
+                <tr>
+                    <td><strong>Afternoon Tea</strong></td>
+                    <td>Vegetable sticks with hummus</td>
+                    <td>Vegetables & Healthy Fats</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="table-caption">Table 3.2: Managing Choking Hazards by Age</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Food Item</th>
+                    <th>Risk Factor</th>
+                    <th>Preparation Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Grapes/Tomatoes</strong></td>
+                    <td>Round shape blocks airway.</td>
+                    <td>Must be cut in quarters lengthwise.</td>
+                </tr>
+                <tr>
+                    <td><strong>Carrots/Apples</strong></td>
+                    <td>Hard chunks.</td>
+                    <td>Cooked until soft or grated (for under 3s).</td>
+                </tr>
+                <tr>
+                    <td><strong>Sausages</strong></td>
+                    <td>Cylindrical plug shape.</td>
+                    <td>Cut into strips lengthwise, never rounds.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>3.2 Sugar Awareness and Allergies</h2>
+        <p>A major focus of nutrition education is hydration. Water should be the primary beverage. Educators must also be vigilant about allergies. Anaphylaxis plans must be followed strictly, and cross-contamination prevented. This includes having separate preparation areas for allergen-free foods and ensuring all staff are trained in EpiPen administration.</p>
+
+        <div class="chart-box">
+            <div class="chart-title">Chart 3.1: Teaspoons of Sugar per 250ml Drink</div>
+            <div class="bar-container">
+                <span class="bar-label">Water</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 1%; background-color: #27ae60;">0 tsp</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Plain Milk</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 20%; background-color: #f1c40f; color:#333;">2 tsp (Natural)</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Apple Juice</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 60%; background-color: #e67e22;">6 tsp Sugar</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Soft Drink</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 100%; background-color: #c0392b;">10 tsp Sugar</div></div>
+            </div>
+        </div>
+
+        <div class="chart-box">
+            <div class="chart-title">Chart 3.2: Common Allergens in Australian Children</div>
+            <div class="bar-container">
+                <span class="bar-label">Egg Allergy</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 90%; background-color: #8e44ad;">8.9% Prevalence</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Peanut Allergy</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 30%; background-color: #9b59b6;">3.0% Prevalence</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Cow's Milk</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 27%; background-color: #af7ac5;">2.7% Prevalence</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="poster-sheet" style="border-top: 15px solid #8e44ad;">
+        <div class="poster-title">POSTER 4: WELLNESS</div>
+
+        <p>Wellness refers to the physical state of the body and its ability to function optimally. It encompasses physical activity, sleep, and oral health. In an increasingly sedentary world, Early Childhood educators play a vital role in instilling habits of movement and rest. Wellness is the "engine" that powers a child's ability to learn; a tired, hungry, or lethargic child cannot engage in the curriculum.</p>
+
+        <div class="visual-container">
+            <img src="infographic1.png" alt="Physical Activity Pyramid" class="poster-image">
+            <div class="caption">Figure 4. Physical Activity Pyramid (Generated via Gemini Nano Banana).</div>
+        </div>
+
+        <h2>4.1 Physical Activity Guidelines</h2>
+        <p>According to the Australian Government's <em>Get Up and Grow</em> guidelines, children under 5 should not be sedentary for more than one hour at a time (excluding sleep). Physical activity is vital for bone density and cardiovascular health. It is broken down into structured play (educator-led) and unstructured play (free exploration).</p>
+
+        <div class="table-caption">Table 4.1: Activity Requirements (Get Up & Grow)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Age</th>
+                    <th>Activity Requirement</th>
+                    <th>Sedentary Limit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Infants</strong></td>
+                    <td>Supervised floor play (Tummy Time).</td>
+                    <td>Not restrained >1hr at a time.</td>
+                </tr>
+                <tr>
+                    <td><strong>Toddlers</strong></td>
+                    <td>3 hours daily (Light + Energetic).</td>
+                    <td>No screen time under 2 years.</td>
+                </tr>
+                <tr>
+                    <td><strong>Preschoolers</strong></td>
+                    <td>3 hours daily (1hr energetic).</td>
+                    <td>Max 1hr screen time per day.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="table-caption">Table 4.2: Recommended Sleep (24 Hours)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Age</th>
+                    <th>Total Sleep</th>
+                    <th>Nap Pattern</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Infants</strong></td>
+                    <td>12 - 16 hours</td>
+                    <td>2-3 naps daily</td>
+                </tr>
+                <tr>
+                    <td><strong>Toddlers</strong></td>
+                    <td>11 - 14 hours</td>
+                    <td>1 nap (after lunch)</td>
+                </tr>
+                <tr>
+                    <td><strong>Preschoolers</strong></td>
+                    <td>10 - 13 hours</td>
+                    <td>Quiet rest time required</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>4.2 Movement Skills and Sedentary Behaviour</h2>
+        <p>Educators must plan specifically for Fundamental Movement Skills (FMS) like running, jumping, and catching. These do not develop naturally; they must be taught through structured play. Excessive screen time or confinement in strollers can inhibit this development.</p>
+
+        <div class="chart-box">
+            <div class="chart-title">Chart 4.1: Screen Time Limits</div>
+            <div class="bar-container">
+                <span class="bar-label">Under 2 Years</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 2%; background-color: #8e44ad;">0 Minutes</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">2 - 5 Years</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 40%; background-color: #9b59b6;">60 Minutes Max</div></div>
+            </div>
+        </div>
+
+        <div class="chart-box">
+            <div class="chart-title">Chart 4.2: Activity Intensity Breakdown (Preschool Day)</div>
+            <div class="bar-container">
+                <span class="bar-label">Light Activity (Walking/Sandpit)</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 60%; background-color: #f1c40f; color:#333;">2 Hours</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Vigorous Activity (Running/Dancing)</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 30%; background-color: #e67e22;">1 Hour</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Sedentary (Reading/Eating)</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 100%; background-color: #95a5a6;">Remainder of day</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="poster-sheet" style="border-top: 15px solid #2980b9;">
+        <div class="poster-title">POSTER 5: WELLBEING</div>
+
+        <p>While Wellness is physical, Wellbeing is psychological and emotional. <em>EYLF Learning Outcome 3</em> states "Children have a strong sense of wellbeing." This includes their ability to regulate emotions, form attachments, and feel a sense of belonging. In the early years, a child's brain is rapidly wiring the pathways for future emotional resilience.</p>
+
+        <div class="visual-container">
+            <img src="infographic2.png" alt="Circle of Security Diagram" class="poster-image">
+            <div class="caption">Figure 5. The Circle of Security Attachment Model (Generated via Gemini Nano Banana).</div>
+        </div>
+
+        <h2>5.1 Attachment and Emotional Literacy</h2>
+        <p>The foundation of wellbeing is a secure attachment with a primary caregiver. The <strong>Circle of Security</strong> model explains that children need a "Secure Base" to explore from and a "Safe Haven" to return to. Educators support this by validating feelings ("I see you are sad") rather than dismissing them. This process, known as "co-regulation," teaches children how to manage big feelings over time.</p>
+
+        <div class="table-caption">Table 5.1: Building Emotional Vocabulary</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Basic Emotion</th>
+                    <th>Expanded Vocabulary</th>
+                    <th>Educator Prompt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Sad</strong></td>
+                    <td>Disappointed, Lonely</td>
+                    <td>"It looks like you feel disappointed the tower fell."</td>
+                </tr>
+                <tr>
+                    <td><strong>Mad</strong></td>
+                    <td>Frustrated, Annoyed</td>
+                    <td>"Your hands are squeezed tight. Are you frustrated?"</td>
+                </tr>
+                <tr>
+                    <td><strong>Scared</strong></td>
+                    <td>Nervous, Cautious</td>
+                    <td>"It's okay to feel nervous about the new slide."</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="table-caption">Table 5.2: Zones of Regulation</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Zone</th>
+                    <th>Feeling</th>
+                    <th>Regulation Strategy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="background:#3498db; color:white;"><strong>Blue</strong></td>
+                    <td>Sad, Tired, Bored</td>
+                    <td>Rest corner, cuddle, drink of water.</td>
+                </tr>
+                <tr>
+                    <td style="background:#2ecc71; color:white;"><strong>Green</strong></td>
+                    <td>Happy, Calm, Focused</td>
+                    <td>Ready to learn! Keep doing what you are doing.</td>
+                </tr>
+                <tr>
+                    <td style="background:#f1c40f; color:black;"><strong>Yellow</strong></td>
+                    <td>Frustrated, Silly, Wiggly</td>
+                    <td>Deep breaths, wall push-ups, walk.</td>
+                </tr>
+                <tr>
+                    <td style="background:#c0392b; color:white;"><strong>Red</strong></td>
+                    <td>Angry, Yelling, Hitting</td>
+                    <td>Safe space, co-regulation with educator.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>5.2 Assessing Wellbeing</h2>
+        <p>Wellbeing is difficult to measure, but tools like the Leuven Scale help educators assess a child's engagement and comfort levels. Maslow's Hierarchy of Needs also provides a framework; we cannot expect a child to reach the top tier of "Self-Actualization" (Learning) if their base tiers of Safety and Belonging are not met.</p>
+
+        <div class="chart-box">
+            <div class="chart-title">Chart 5.1: The Leuven Scale for Wellbeing</div>
+            <div class="bar-container">
+                <span class="bar-label">Level 1: Extremely Low</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 20%; background-color: #c0392b;">Distressed</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Level 3: Moderate</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 60%; background-color: #f1c40f; color:#333;">Neutral</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Level 5: Extremely High</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 100%; background-color: #27ae60;">Confident/Enjoying</div></div>
+            </div>
+        </div>
+
+        <div class="chart-box">
+            <div class="chart-title">Chart 5.2: Maslow's Hierarchy in Care</div>
+            <div class="bar-container">
+                <span class="bar-label">Self-Actualization (Learning)</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 20%; background-color: #8e44ad;">Top Tier</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Esteem (Praise/Success)</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 40%; background-color: #2980b9;">Tier 4</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Belonging (Relationships)</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 60%; background-color: #27ae60;">Tier 3</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Safety (Physical/Emotional)</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 80%; background-color: #e67e22;">Tier 2</div></div>
+            </div>
+            <div class="bar-container">
+                <span class="bar-label">Physiological (Food/Sleep)</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 100%; background-color: #c0392b;">Base Tier</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="poster-sheet" style="border-top: 15px solid #34495e;">
+        <div class="poster-title">REFERENCES & BIBLIOGRAPHY</div>
+
+        <h3>REFERENCES</h3>
+        <p>The following resources were used to inform the content of this multimodal text.</p>
+        
+        <div class="ref-entry">
+            [cite_start]Australian Children’s Education and Care Quality Authority. (2022). <em>Guide to the National Quality Framework</em>. ACECQA. https://www.acecqa.gov.au [cite: 321, 346, 347]
+        </div>
+        <div class="ref-entry">
+            Cancer Council Australia. (2023). <em>SunSmart program: Early childhood and schools</em>. https://www.cancer.org.au/cancer-information/causes-and-prevention/sun-safety
+        </div>
+        <div class="ref-entry">
+            Department of Education. (2022). <em>Belonging, being and becoming: The early years learning framework for Australia</em> (V2.0). [cite_start]Australian Government Department of Education. [cite: 346]
+        </div>
+        <div class="ref-entry">
+            Department of Health and Aged Care. (2013). <em>Get up and grow: Healthy eating and physical activity for early childhood</em>. Australian Government.
+        </div>
+        <div class="ref-entry">
+            National Health and Medical Research Council. (2013). <em>Staying healthy: Preventing infectious diseases in early childhood education and care services</em> (5th ed.). Australian Government.
+        </div>
+        <div class="ref-entry">
+            Red Nose Australia. (2023). <em>Safe sleeping practices for childcare services</em>. https://rednose.org.au/section/safe-sleeping
+        </div>
+        <div class="ref-entry">
+            Satter, E. (2023). <em>The division of responsibility in feeding</em>. Ellyn Satter Institute. https://www.ellynsatterinstitute.org
+        </div>
+
+        <br><hr><br>
+
+        <h3>Generative AI Bibliography</h3>
+        <div class="ref-entry">
+            Google. (2025). <em>Gemini Nano Banana (Gemini 2.5 Flash Image)</em> [Large language model]. https://deepmind.google/technologies/gemini/
+        </div>
+        <div class="ref-entry">
+            OpenAI. (2024). <em>ChatGPT</em> (Dec 6 version) [Large language model]. https://chat.openai.com
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; color: #aaa; border-top: 1px solid #eee; padding-top: 10px;">
+            Assessment 3 Completed | Umar Aslam | IKO3009528
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
